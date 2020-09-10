@@ -1,7 +1,7 @@
 variable "kibana_image" {
   type        = string
   description = "Kibana Docker image to use"
-  default     = "docker.elastic.co/kibana/kibana:7.9.1"
+  default     = "docker.elastic.co/kibana/kibana:7.7.1"
 }
 variable "cf_org" {
   type        = string
@@ -36,12 +36,12 @@ variable "network_policies" {
 variable "memory" {
   type        = number
   description = "The amount of RAM to allocate for Kibana (MB)"
-  default     = 512
+  default     = 2048
 }
 variable "disk" {
   type        = number
   description = "The amount of Disk space to allocate for Kibana (MB)"
-  default     = 1024
+  default     = 2048
 }
 variable "db_broker" {
   type        = string
