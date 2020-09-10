@@ -21,6 +21,7 @@ resource "cloudfoundry_app" "kibana" {
   disk_quota   = var.disk
   docker_image = var.kibana_image
   environment  = var.environment
+  timeout      = 180
 
   routes {
     route = cloudfoundry_route.kibana.id
