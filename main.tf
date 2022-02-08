@@ -15,7 +15,7 @@ data "cloudfoundry_domain" "domain" {
 }
 
 resource "cloudfoundry_app" "kibana" {
-  name         = "kibana"
+  name         = var.name_postfix == "" ? "kibana" : "kibana-${var.name_postfix}"
   space        = data.cloudfoundry_space.space.id
   memory       = var.memory
   disk_quota   = var.disk
